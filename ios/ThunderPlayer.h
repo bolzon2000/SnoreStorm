@@ -9,10 +9,24 @@
 #ifndef ThunderPlayer_h
 #define ThunderPlayer_h
 #import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface ThunderPlayer: NSObject
+@protocol ThunderDelegate <NSObject>
+@required
+- (void) thunderComplete;
+@end
 
-- (void) play;
+@interface ThunderPlayer: NSObject <AVAudioPlayerDelegate>
+{
+  AVAudioPlayer *thunderPlayer;
+  NSString *thunder;
+  NSString *thunderClip;
+  id <ThunderDelegate> _delegate;
+
+}
+@property (nonatomic, strong) id delegate;
+
+- (void) playAudio;
 
 @end
 

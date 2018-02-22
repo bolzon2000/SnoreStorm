@@ -11,22 +11,23 @@ import {
   View,
   Button,
   Image,
+  requireNativeComponent
 } from 'react-native';
 import Sensitivity from './Sensitivity';
 import Thunder from './Thunder';
 import Lightning from './Lightning';
 import {NativeModules, NativeEventEmitter} from 'react-native';
 
-
 // get global stylesheet
 var gs = require ('./g_style');
 
 //global var
 var StormEngine = NativeModules.StormEngine;
-const myModuleEvt = new NativeEventEmitter(NativeModules.StormEngine)
+//var GraphManager = NativeModules.GraphManager;
+module.exports = requireNativeComponent('Graph', null);
+
+const myModuleEvt = new NativeEventEmitter(NativeModules.StormEngine);
 const snoreSubscription = null;
-
-
 
 export default class MainPage extends Component <{}> {
 
@@ -44,12 +45,14 @@ export default class MainPage extends Component <{}> {
         this.setState({ snoreCount: data })
       //(data) => self.setState({ snoreCount: data })
     );
+    const testArray = (33,42,5,0,23,1,36,52,44,23,65,23,43,21,11,43,55);
   };
 
 ///////////////////////////
 // UI Templates
 ///////////////////////////
   renderStart() {
+    console.log('inhereeenthoghitsblank');
     if (this.state.recording) {
       if (this.state.pause) {
         return (
@@ -79,6 +82,7 @@ export default class MainPage extends Component <{}> {
         <View style={styles.messageContainer}>
           <Text style={gs.bodysmall}>SNORE COUNT</Text>
           <Text style={[gs.heading, {fontSize: 48}]}>{this.state.snoreCount}</Text>
+          <Graph dummy={'dave'} style={{flex: 1}} />
         </View>
       );
     } else {
@@ -170,6 +174,7 @@ export default class MainPage extends Component <{}> {
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   instructions: {

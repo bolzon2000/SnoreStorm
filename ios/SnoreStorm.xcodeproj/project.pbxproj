@@ -34,10 +34,21 @@
 		2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */; };
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* SnoreStormTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SnoreStormTests.m */; };
+		5535B1852037F76800415933 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5535B15F2037F76700415933 /* AVFoundation.framework */; };
+		5535B1DD203A353900415933 /* NSMutableArray+JBStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 5535B1BF203A353900415933 /* NSMutableArray+JBStack.m */; };
+		5535B1DE203A353900415933 /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5535B1C2203A353900415933 /* JBBarChartView.m */; };
+		5535B1DF203A353900415933 /* JBGradientBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5535B1C5203A353900415933 /* JBGradientBarView.m */; };
+		5535B1E0203A353900415933 /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5535B1C8203A353900415933 /* JBChartView.m */; };
+		5535B238203AB39100415933 /* GraphGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5535B1B8203A2DD300415933 /* GraphGenerator.m */; };
+		5535B23B203BD9CE00415933 /* GraphManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5535B239203BD64F00415933 /* GraphManager.m */; };
 		55F00E1520299886004AD8D9 /* StormEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F00E1420299886004AD8D9 /* StormEngine.m */; };
 		55F00E3D20299BC2004AD8D9 /* SnoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F00E3C20299BC2004AD8D9 /* SnoreData.m */; };
 		55F00E7D20316DFA004AD8D9 /* ThunderPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F00E7C20316DF9004AD8D9 /* ThunderPlayer.m */; };
 		55F00E7F20316E1B004AD8D9 /* LightningFlasher.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F00E7E20316E1B004AD8D9 /* LightningFlasher.m */; };
+		55F00E872032CD40004AD8D9 /* thunder3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55F00E832032CD3F004AD8D9 /* thunder3.mp3 */; };
+		55F00E882032CD41004AD8D9 /* thunder2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55F00E842032CD40004AD8D9 /* thunder2.mp3 */; };
+		55F00E892032CD41004AD8D9 /* thunder1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55F00E852032CD40004AD8D9 /* thunder1.mp3 */; };
+		55F00E8A2032CD41004AD8D9 /* thunder4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55F00E862032CD40004AD8D9 /* thunder4.mp3 */; };
 		55F78DA6201C3B8E00C746EA /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
@@ -342,6 +353,19 @@
 		2D02E47B1E0B4A5D006451C7 /* SnoreStorm-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SnoreStorm-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* SnoreStorm-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SnoreStorm-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5535B15F2037F76700415933 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5535B1B7203A2DB700415933 /* GraphGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphGenerator.h; sourceTree = "<group>"; };
+		5535B1B8203A2DD300415933 /* GraphGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphGenerator.m; sourceTree = "<group>"; };
+		5535B1BE203A353900415933 /* NSMutableArray+JBStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+JBStack.h"; sourceTree = "<group>"; };
+		5535B1BF203A353900415933 /* NSMutableArray+JBStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+JBStack.m"; sourceTree = "<group>"; };
+		5535B1C1203A353900415933 /* JBBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBarChartView.h; sourceTree = "<group>"; };
+		5535B1C2203A353900415933 /* JBBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBarChartView.m; sourceTree = "<group>"; };
+		5535B1C4203A353900415933 /* JBGradientBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBGradientBarView.h; sourceTree = "<group>"; };
+		5535B1C5203A353900415933 /* JBGradientBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBGradientBarView.m; sourceTree = "<group>"; };
+		5535B1C7203A353900415933 /* JBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartView.h; sourceTree = "<group>"; };
+		5535B1C8203A353900415933 /* JBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartView.m; sourceTree = "<group>"; };
+		5535B239203BD64F00415933 /* GraphManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphManager.m; sourceTree = "<group>"; };
+		5535B23A203BD65000415933 /* GraphManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphManager.h; sourceTree = "<group>"; };
 		55F00E1420299886004AD8D9 /* StormEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = StormEngine.m; path = SnoreStorm/StormEngine.m; sourceTree = "<group>"; };
 		55F00E3B202998C2004AD8D9 /* StormEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StormEngine.h; path = SnoreStorm/StormEngine.h; sourceTree = "<group>"; };
 		55F00E3C20299BC2004AD8D9 /* SnoreData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SnoreData.m; path = SnoreStorm/SnoreData.m; sourceTree = "<group>"; };
@@ -350,6 +374,10 @@
 		55F00E7E20316E1B004AD8D9 /* LightningFlasher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LightningFlasher.m; path = SnoreStorm/LightningFlasher.m; sourceTree = "<group>"; };
 		55F00E8020316E9F004AD8D9 /* ThunderPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThunderPlayer.h; sourceTree = "<group>"; };
 		55F00E8120316EE9004AD8D9 /* LightningFlasher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LightningFlasher.h; sourceTree = "<group>"; };
+		55F00E832032CD3F004AD8D9 /* thunder3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = thunder3.mp3; path = ../Resources/thunder3.mp3; sourceTree = "<group>"; };
+		55F00E842032CD40004AD8D9 /* thunder2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = thunder2.mp3; path = ../Resources/thunder2.mp3; sourceTree = "<group>"; };
+		55F00E852032CD40004AD8D9 /* thunder1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = thunder1.mp3; path = ../Resources/thunder1.mp3; sourceTree = "<group>"; };
+		55F00E862032CD40004AD8D9 /* thunder4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = thunder4.mp3; path = ../Resources/thunder4.mp3; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
@@ -369,6 +397,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5535B1852037F76800415933 /* AVFoundation.framework in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				55F78DA6201C3B8E00C746EA /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -491,6 +520,8 @@
 		13B07FAE1A68108700A75B9A /* SnoreStorm */ = {
 			isa = PBXGroup;
 			children = (
+				5535B1BC203A353900415933 /* ChartingClasses */,
+				55F00E822032CD15004AD8D9 /* audioFiles */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -502,6 +533,10 @@
 				55F00E1420299886004AD8D9 /* StormEngine.m */,
 				55F00E3E20299C15004AD8D9 /* SnoreData.h */,
 				55F00E3C20299BC2004AD8D9 /* SnoreData.m */,
+				5535B23A203BD65000415933 /* GraphManager.h */,
+				5535B239203BD64F00415933 /* GraphManager.m */,
+				5535B1B7203A2DB700415933 /* GraphGenerator.h */,
+				5535B1B8203A2DD300415933 /* GraphGenerator.m */,
 				55F00E8020316E9F004AD8D9 /* ThunderPlayer.h */,
 				55F00E7C20316DF9004AD8D9 /* ThunderPlayer.m */,
 				55F00E8120316EE9004AD8D9 /* LightningFlasher.h */,
@@ -536,9 +571,68 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5535B15F2037F76700415933 /* AVFoundation.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5535B1BC203A353900415933 /* ChartingClasses */ = {
+			isa = PBXGroup;
+			children = (
+				5535B1BD203A353900415933 /* Additions */,
+				5535B1C0203A353900415933 /* Bar */,
+				5535B1C6203A353900415933 /* Base */,
+			);
+			path = ChartingClasses;
+			sourceTree = "<group>";
+		};
+		5535B1BD203A353900415933 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				5535B1BE203A353900415933 /* NSMutableArray+JBStack.h */,
+				5535B1BF203A353900415933 /* NSMutableArray+JBStack.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		5535B1C0203A353900415933 /* Bar */ = {
+			isa = PBXGroup;
+			children = (
+				5535B1C1203A353900415933 /* JBBarChartView.h */,
+				5535B1C2203A353900415933 /* JBBarChartView.m */,
+				5535B1C3203A353900415933 /* Views */,
+			);
+			path = Bar;
+			sourceTree = "<group>";
+		};
+		5535B1C3203A353900415933 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5535B1C4203A353900415933 /* JBGradientBarView.h */,
+				5535B1C5203A353900415933 /* JBGradientBarView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5535B1C6203A353900415933 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5535B1C7203A353900415933 /* JBChartView.h */,
+				5535B1C8203A353900415933 /* JBChartView.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		55F00E822032CD15004AD8D9 /* audioFiles */ = {
+			isa = PBXGroup;
+			children = (
+				55F00E852032CD40004AD8D9 /* thunder1.mp3 */,
+				55F00E842032CD40004AD8D9 /* thunder2.mp3 */,
+				55F00E832032CD3F004AD8D9 /* thunder3.mp3 */,
+				55F00E862032CD40004AD8D9 /* thunder4.mp3 */,
+			);
+			name = audioFiles;
 			sourceTree = "<group>";
 		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
@@ -708,6 +802,10 @@
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = JR8F533E83;
+						ProvisioningStyle = Automatic;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1066,7 +1164,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				55F00E892032CD41004AD8D9 /* thunder1.mp3 in Resources */,
+				55F00E8A2032CD41004AD8D9 /* thunder4.mp3 in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				55F00E882032CD41004AD8D9 /* thunder2.mp3 in Resources */,
+				55F00E872032CD40004AD8D9 /* thunder3.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1131,10 +1233,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5535B23B203BD9CE00415933 /* GraphManager.m in Sources */,
+				5535B238203AB39100415933 /* GraphGenerator.m in Sources */,
 				55F00E7F20316E1B004AD8D9 /* LightningFlasher.m in Sources */,
+				5535B1DE203A353900415933 /* JBBarChartView.m in Sources */,
+				5535B1DF203A353900415933 /* JBGradientBarView.m in Sources */,
+				5535B1E0203A353900415933 /* JBChartView.m in Sources */,
 				55F00E1520299886004AD8D9 /* StormEngine.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				5535B1DD203A353900415933 /* NSMutableArray+JBStack.m in Sources */,
 				55F00E3D20299BC2004AD8D9 /* SnoreData.m in Sources */,
 				55F00E7D20316DFA004AD8D9 /* ThunderPlayer.m in Sources */,
 			);
@@ -1228,8 +1336,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = JR8F533E83;
 				INFOPLIST_FILE = SnoreStorm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1239,6 +1350,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SnoreStorm;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1247,7 +1359,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JR8F533E83;
 				INFOPLIST_FILE = SnoreStorm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1257,6 +1372,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SnoreStorm;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -1380,7 +1496,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: dave bolton (BRFN5Q377F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: dave bolton (BRFN5Q377F)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1431,7 +1548,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: dave bolton (BRFN5Q377F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: dave bolton (BRFN5Q377F)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

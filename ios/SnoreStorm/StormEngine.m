@@ -8,6 +8,7 @@
 
 #import "StormEngine.h"
 
+
 @implementation StormEngine
 
 //export a module to javascript named StormEngine
@@ -21,6 +22,12 @@ RCT_EXPORT_MODULE();
 // export the start method to javascript
 RCT_EXPORT_METHOD(startTimer)
 {
+  //these items stay, even on reset/stop/start
+  //below is the delegate for thunder completion
+  thunderPlayer = [ThunderPlayer alloc];
+  thunderPlayer.delegate = self;
+  lightningFlasher = [[LightningFlasher alloc] init];
+  lightningFlasher.delegate = self;
   [self initializeEngine];
 }
 
@@ -46,11 +53,26 @@ RCT_EXPORT_METHOD(stopTimer) {
   
   for (int x=0; x < [snoresByMinute count]; x++)
     NSLog (@"snore for minute: %i are: %i", x, [[snoresByMinute objectAtIndex:x] intValue]);
+  /*
+  GraphGenerator *snoreGraph = [[GraphGenerator alloc] init];
+  UIView *graphView = [snoreGraph getGraph:snoresByMinute testing:YES];
+  
+  rctViewClass = [RCTViewClass alloc];
+  rctViewClass.moduleName = "@snoreGraph";
+  
+  
+  [rctViewClass.bridge initial
+  [rctViewClass rctv]
+  RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
+                                                   moduleName:@"ImageBrowserApp"
+                                            initialProperties:props];
+  
+  return graphView;
   //SnoreData *mySnoreData = [SnoreData alloc];
   //mySnoreData.snoreCount = 30;
   //mySnoreData.startTime;
   //mySnoreData.endTime = [NSDate date];
-  
+  */
 }
 
 - (void) initializeEngine {
@@ -60,6 +82,8 @@ RCT_EXPORT_METHOD(stopTimer) {
   timerPaused = NO;
   snoresThisMinute = 0;
   snoreCount = 0;
+  thunderPlaying = NO;
+  flashing = NO;
   
   if (!snoresByMinute)
     snoresByMinute = [NSMutableArray array];
@@ -102,6 +126,7 @@ RCT_EXPORT_METHOD(stopTimer) {
 
   //because we are throwing away the recording, send it to dev/null
   NSURL *url = [NSURL fileURLWithPath:@"/dev/null"];
+  //NSURL *url = [NSURL fileURLWithPath:NSTemporaryDirectory()];
   
   NSDictionary *settings = [NSDictionary dictionaryWithObjectsAndKeys:
                             [NSNumber numberWithFloat: 44100.0],                 AVSampleRateKey,
@@ -114,20 +139,30 @@ RCT_EXPORT_METHOD(stopTimer) {
   
   recorder = [[AVAudioRecorder alloc] initWithURL:url settings:settings error:&error];
   
+  NSError *errorAudioSession;
+  [[AVAudioSession sharedInstance]
+   setCategory:AVAudioSessionCategoryPlayAndRecord error:&errorAudioSession];
+  
+  if (errorAudioSession) {
+    NSLog(@"Error description: %@", [errorAudioSession description]);
+  }
+  
+
   if (recorder) {
     [recorder prepareToRecord];
     recorder.meteringEnabled = YES;
     [recorder record];
     snoreTimer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target: self selector: @selector(snoreTimerCallback) userInfo: nil repeats: YES];
-    [self snoreTimerCallback];
+    
   } else
     NSLog(@"error Will Robinson error, %@", error.description);
 }
 
 - (void)snoreTimerCallback {
-  
-  // if we're paused, no reason to continue, timer can keep going, but we won't capture data
-  if (timerPaused)
+  NSLog(@"in snore callback");
+  // if we're paused, or thunder is playin no reason to continue, timer can keep going, but we won't capture data
+  NSLog(@"flashing not quite sure %d",flashing);
+  if (timerPaused || thunderPlaying || flashing)
     return;
   
   [recorder updateMeters];
@@ -137,15 +172,36 @@ RCT_EXPORT_METHOD(stopTimer) {
   //lowPassResults = ALPHA * peakPowerForChannel + (1.0 - ALPHA) * lowPassResults;
   
   //NSLog(@"Average input: %f Peak input: %f Low pass results: %f", [recorder averagePowerForChannel:0], [recorder peakPowerForChannel:0], lowPassResults);
+  //NSLog(@"averagePower %f",[recorder averagePowerForChannel:0]);
+  NSLog(@"decibels %f",20 * log10(5 * powf(10, ([recorder averagePowerForChannel:0]/20)) * 160) + 50);
+  double decibels = (20 * log10(5 * powf(10, ([recorder averagePowerForChannel:0]/20)) * 160) + 50);
 
-  if ([recorder peakPowerForChannel:0] > -60) {
+  if (decibels > 60) {
     snoresThisMinute++;
     snoreCount++;
     
+    thunderPlaying = YES;
+    flashing = YES;
+    
+    [thunderPlayer playAudio];
+    [lightningFlasher flash:4];
+    
     //send event back to javascript
     [self sendEventWithName:@"snoreDataCallback" body:[NSString stringWithFormat:@"%i",snoreCount]];
+    
   }
   
+}
+
+-(void)thunderComplete
+{
+  thunderPlaying = NO;
+}
+
+-(void)flashesComplete
+{
+  NSLog(@"flashing here ");
+  flashing = NO;
 }
 
 @end

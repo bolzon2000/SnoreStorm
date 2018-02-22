@@ -13,8 +13,11 @@
 #import <AVFoundation/AVFoundation.h>
 #import <CoreAudio/CoreAudioTypes.h>
 #import <React/RCTEventEmitter.h>
+#import "ThunderPlayer.h"
+#import "LightningFlasher.h"
+#import "GraphGenerator.h"
 
-@interface StormEngine: RCTEventEmitter <RCTBridgeModule>
+@interface StormEngine: RCTEventEmitter <RCTBridgeModule, ThunderDelegate, FlashDelegate>
 {
   NSTimer *myLoop;
   NSDate *startTime;
@@ -26,10 +29,14 @@
   AVAudioRecorder *recorder;
   NSMutableArray *snoresByMinute;
   bool timerPaused;
-  
-}
-@property SnoreData *snoreData;
+  ThunderPlayer *thunderPlayer;
+  LightningFlasher *lightningFlasher;
+  bool thunderPlaying;
+  bool flashing;
 
+}
+
+@property SnoreData *snoreData;
 
 - (void) startTimer;
 - (void) pauseTimer;
